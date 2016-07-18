@@ -1,0 +1,37 @@
+<html>
+	<title>Trutherbot Dashboard</title>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="js/tweet.js"></script>
+		<script>
+$(document).ready(function() {
+    var text_max = 140;
+    $('#textarea_feedback').html(text_max + ' characters remaining');
+
+    $('#tweet').keyup(function() {
+        var text_length = $('#tweet').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' characters remaining');
+    });
+});
+</script>
+	</head>
+	<body>
+		<form id="trutherbot" method="post">
+			<textarea id="tweet" rows="4" cols="40" maxlength="140" ></textarea>
+			<br/>
+			<div id="textarea_feedback"></div>
+			<input name="save" type="radio" value="save" checked="checked"/>Schedule
+	
+			<input name="save" type="radio" value="tweet" />Tweet
+			<br />
+			<br/>
+			<input type="button" id="submitFormData" onClick="TweetData();" value="Submit" />
+		</form>
+		<br/>
+		<div id="results">
+			<!-- All data will display here  -->
+		</div>
+	</body>
+</html>
