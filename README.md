@@ -1,5 +1,5 @@
 # trutherbot
-
+![Alt text](https://github.com/trutherbotdash/trutherbot/blob/master/html/img/trutherbotdash.png?raw=true "Optional Title")
 Installation Steps:
 
 Pre requisites, PHP 5.5 or newer. PHP Curl must be installed.
