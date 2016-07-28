@@ -1,37 +1,163 @@
+<!doctype html>
 <html>
-	<title>Trutherbot Dashboard</title>
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="js/tweet.js"></script>
-		<script>
-$(document).ready(function() {
-    var text_max = 140;
-    $('#textarea_feedback').html(text_max + ' characters remaining');
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+      <meta name="author" content="@trutherbotearth">
+      <title>Trutherbot Dash</title>
+      <!-- Bootstrap core CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom Google Web Font -->
+      <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+      <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+      <!-- Custom CSS-->
+      <link href="css/general.css" rel="stylesheet">
+      <!-- Owl-Carousel -->
+      <link href="css/custom.css" rel="stylesheet">
+      <link href="css/owl.carousel.css" rel="stylesheet">
+      <link href="css/owl.theme.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/animate.css" rel="stylesheet">
+      <!-- Magnific Popup core CSS file -->
+      <link rel="stylesheet" href="css/magnific-popup.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script src="js/modernizr-2.8.3.min.js"></script>  <!-- Modernizr /-->
+      <script src="js/tweet.js"></script>
+      <script src="js/uploader.js"></script>
+      <script src="js/bootstrap-filestyle.js"></script>
+      <script>
+         $(document).ready(function() {
+             var text_max = 140;
+             $('#textarea_feedback').html(text_max + ' characters remaining');
+         
+             $('#tweet').keyup(function() {
+                 var text_length = $('#tweet').val().length;
+                 var text_remaining = text_max - text_length;
+         
+                 $('#textarea_feedback').html(text_remaining + ' characters remaining');
+             });
+         });
+      </script>
+   </head>
+   <body id="home">
+      <!-- Preloader -->
+      <div id="preloader">
+         <div id="status"></div>
+      </div>
+      <!-- FullScreen -->
+      <div class="intro-header">
+         <form id="trutherbot" method="post">
+            <div class="col-md-5">
+               <div class="form-group">
+                  <div class="input-group">
+                     <textarea class="tweetbox" id="tweet" rows="4" cols="40" maxlength="140" required></textarea>
+                  </div>
+               </div>
+               <div id="textarea_feedback">
+                  <!-- Twitter Charecter Countdown -->
+               </div>
+               <input name="save" type="radio" value="save" checked="checked"/> Schedule Tweet 
+               <input name="save" type="radio" value="tweet" /> Tweet Now 
+               <br />
+               <br/>
+               <input class="btn  btn-lg mybutton_cyano wow fadeIn" type="button" id="submitFormData" onClick="TweetData();" value="Submit" />
+               <div class="col-md-5 tweetsent" id="results">
+                  <!-- All data will display here  -->
+               </div>
+            </div>
+         </form>
+         <!-- start uploader -->
+         <form id="uploadimage" method="post" enctype="multipart/form-data">
+            <div class="tweetsent" id="message"></div>
+            <div class="col-md-5">
+               <div class="form-group">
+                  <div class="input-group">
+                     <label>Schedule Meme</label><br/>
+                     <input type="file" name="file" id="file" class="filestyle" data-iconName="glyphicon glyphicon-inbox" data-input="trur" data-badge="false" accept="image/*" required  />
+                     <br/>
+                     <br/>
+                     <input class="btn  btn-lg mybutton_cyano wow fadeIn submit" type="submit" value="Upload" />
+                  </div>
+                  <div class="morph-clone text-center white imagecontainer" id="image_preview"><img id="previewing" src="img/Anonymous-mask.jpg" /></div>
+                  <div id="selectImage"></div>
+               </div>
+         </form>
+         <!-- stop uploader -->
+         </div>
+      </div>
+      <!-- /.container -->
+      <div class="col-xs-12 text-center abcen wow fadeIn">
+         <div class="button_down "> 
+            <a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#whatis"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
+         </div>
+      </div>
+      </div>
+      </div>
+      <!-- NavBar-->
+      <nav role="navigation">
+      <div class="container">
+      
+      <div class="navbar-header">
 
-    $('#tweet').keyup(function() {
-        var text_length = $('#tweet').val().length;
-        var text_remaining = text_max - text_length;
-
-        $('#textarea_feedback').html(text_remaining + ' characters remaining');
-    });
-});
-</script>
-	</head>
-	<body>
-		<form id="trutherbot" method="post">
-			<textarea id="tweet" rows="4" cols="40" maxlength="140" ></textarea>
-			<br/>
-			<div id="textarea_feedback"></div>
-			<input name="save" type="radio" value="save" checked="checked"/>Schedule
-	
-			<input name="save" type="radio" value="tweet" />Tweet
-			<br />
-			<br/>
-			<input type="button" id="submitFormData" onClick="TweetData();" value="Submit" />
-		</form>
-		<br/>
-		<div id="results">
-			<!-- All data will display here  -->
-		</div>
-	</body>
+         <a class="navbar-brand" href="#home">@trutherbotdash</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+     
+     
+     <div  class="content-section-c ">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 col-md-offset-3 text-center white">
+                  <h2>Get Live Updates</h2>
+                  <p class="lead" style="margin-top:0"></p>
+               </div>
+               <div class="col-md-6 col-md-offset-3 text-center">
+                  <div class="mockup-content">
+                     <div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1">
+                        <button type="button "><span>View source on Github</span></button>
+                        <div class="morph-content">
+                           <div>
+                              <div class="content-style-form content-style-form-4 ">
+                                 <h2 class="morph-clone">View source on Github</h2>
+                                 <form>
+                                    <p><button onClick="window.open('https://github.com/trutherbotdash/trutherbot', 'newWindow','width=800,height=800,'+'status=no,toolbar=no,menubar=no')">Go to GitHub!</button></p>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+      </div>
+      </div>
+      </div>
+      <!-- JavaScript -->
+      <script src="js/jquery-1.10.2.js"></script>
+      <script src="js/bootstrap.js"></script>
+      <script src="js/owl.carousel.js"></script>
+      <script src="js/script.js"></script>
+      <!-- StikyMenu -->
+      <script src="js/stickUp.min.js"></script>
+<!--      <script type="text/javascript">
+         jQuery(function($) {
+         $(document).ready( function() {
+          $('.navbar-default').stickUp();
+          
+         });
+         });
+         
+      </script> -->
+      <!-- Smoothscroll -->
+      <script type="text/javascript" src="js/jquery.corner.js"></script> 
+      <script src="js/wow.min.js"></script>
+      <script>
+         new WOW().init();
+      </script>
+      <script src="js/classie.js"></script>
+      <script src="js/uiMorphingButton_inflow.js"></script>
+      <!-- Magnific Popup core JS file -->
+      <script src="js/jquery.magnific-popup.js"></script> 
+   </body>
 </html>
