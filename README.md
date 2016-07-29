@@ -7,11 +7,11 @@ Make sure to change upload_max_filesize = 10M in your php.ini
 so that some of the larger photos can be uploaded.
 
 1. Download the files and put the contents of the HTML directory
-   somewhere browseable on your webserver.
+   somewhere browse-able on your web server.
 
 2. Ensure that the directory /schedule/ and it's child directories
-   are owned by your webserver and writable by it.
-   Use this command:  sudo chown -R apache:apache schedule
+   are owned by your web server and writable by it.
+   Use this command:  sudo chown -R apache:apache schedule (or whatever user/group your web server runs under)
 
 3. Go to https://apps.twitter.com/app/ and create a new app.
    You will need four different keys that you will be able to copy
@@ -23,7 +23,7 @@ so that some of the larger photos can be uploaded.
     $cb->setConsumerKey('XXXXXXXXXXXXXXXXXXXXXX', 'XXXXXXXXXXXXXXXXXXX');
     $cb->setToken('XXXXXXXXXXXXX', 'XXXXXXXXXXXXXXXXXX');
 
-will now look somthing similar to what is seen below depending on your apps keys:
+will now look something similar to what is seen below depending on your apps keys:
 
     $cb->setConsumerKey('LKJBljfl737gr73irlg37iG373', 'lhjash7hi3h8dgf88g8f8gg8s48seg');
     $cb->setToken('ljhbsdufhli73YRP89RH3QO78G', 'khjsdjfbldhfas7t7i3lgrir87es0fqg28f60e7fg97qw6e');	
