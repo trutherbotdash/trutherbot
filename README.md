@@ -12,6 +12,13 @@ so that some of the larger photos can be uploaded.
 2. Ensure that the directory /schedule/ and it's child directories
    are owned by your web server and writable by it.
    Use this command:  sudo chown -R apache:apache schedule (or whatever user/group your web server runs under)
+   If you are still having problems, it may be SELinux, see if it is the problem by temporarily disabling it with
+   this command. sudo setenforce 0
+
+   If you are able to successfully upload files now, you will need to issue a command similar to this:
+   sudo semanage fcontext -a -t httpd_sys_rw_content_t 'schedule'
+   sudo restorecon -v 'schedule'
+   Make sure to re-enable SELinux: sudo setenforce 1
 
 3. Go to https://apps.twitter.com/app/ and create a new app.
    You will need four different keys that you will be able to copy
