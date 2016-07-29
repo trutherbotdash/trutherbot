@@ -22,7 +22,7 @@ echo $_POST['tweet'] ."<br />";
 echo "<br />";
 
 if ($_POST['tweet']=="") {
-	echo "you have to type somthing!!!!";
+	echo "you have to type something!!!!";
 	exit;
 }
 
