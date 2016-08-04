@@ -10,7 +10,7 @@
 $cb = \Codebird\Codebird::getInstance();
 
 $dir = 'tweets/';
-if (count(glob($dir."*")) === 0 )
+if (count(glob($dir."*")) === 1 )
  { die; // empty
  } else  
 $files = glob($dir . '*.{txt}', GLOB_BRACE);
