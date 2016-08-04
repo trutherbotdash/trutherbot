@@ -12,10 +12,15 @@ so that some of the larger photos can be uploaded.
 2. Ensure that the directory /schedule/ and it's child directories
    are owned by your web server and writable by it.
    Use this command:  sudo chown -R apache:apache schedule (or whatever user/group your web server runs under)
+   
+   Is SELinux stopping you?
    If you are still having problems, it may be SELinux, see if it is the problem by temporarily disabling it with
    this command. sudo setenforce 0
 
    If you are able to successfully upload files now, you will need to issue a command similar to this:
+   
+   Make sure you are in the directory where the folder 'schedule' is located
+   
    sudo semanage fcontext -a -t httpd_sys_rw_content_t 'schedule'
    sudo restorecon -v 'schedule'
    Make sure to re-enable SELinux: sudo setenforce 1
