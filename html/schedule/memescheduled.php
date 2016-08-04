@@ -10,7 +10,7 @@
 $cb = \Codebird\Codebird::getInstance();
 
 $dir = 'memes/';
-if (count(glob($dir."*")) === 0 )
+if (count(glob($dir."*")) === 1 )
  { die; // empty
  } else  
 $files = glob($dir . '*.{jpg,jpeg,gif,png}', GLOB_BRACE);
